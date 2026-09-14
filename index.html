@@ -4,10 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mujahid Amin — Flutter &amp; Mobile Developer</title>
-<meta name="description" content="Flutter and mobile developer building production-grade cross-platform apps. 2 years of experience across fintech, healthcare, and retail.">
+<meta name="description" content="Flutter and mobile developer building production-grade cross-platform apps. 2+ years of experience across fintech, healthcare, and retail.">
+<meta name="theme-color" content="#0A0A0B">
+<meta name="color-scheme" content="dark">
 
-<!-- TODO: replace with your own favicon -->
-<link rel="icon" href="data:,">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Mujahid Amin — Flutter &amp; Mobile Developer">
+<meta property="og:description" content="Flutter and mobile developer building production-grade cross-platform apps. 2+ years of experience across fintech, healthcare, and retail.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mujahid Amin — Flutter &amp; Mobile Developer">
+<meta name="twitter:description" content="Flutter and mobile developer building production-grade cross-platform apps.">
+<meta name="twitter:image" content="assets/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +30,9 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- Scroll progress indicator -->
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -29,9 +46,10 @@
       <a href="#projects">projects</a>
       <a href="#stack">stack</a>
       <a href="#contact">contact</a>
+      <span class="nav-indicator" aria-hidden="true"></span>
     </nav>
-    <!-- TODO: point this at your actual resume PDF once hosted -->
-    <a href="mujahid_mobile_resume.pdf" class="nav-resume" download>resume.pdf</a>
+    <button class="nav-palette-btn" id="nav-palette-btn" aria-label="Open command palette (⌘K)">⌘K</button>
+    <a href="https://drive.google.com/file/d/1W25ZlPjyRTFhGExNmx1rqFxZ4CQLVTfq/view?usp=sharing" class="nav-resume" target="_blank" rel="noopener">resume.pdf</a>
   </div>
 </header>
 
@@ -40,19 +58,44 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
     <div class="container">
-      <p class="prompt-line">
-        <span class="prompt-user">visitor@mujahid</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
-        <span class="typed" id="typed-command"></span><span class="type-cursor" aria-hidden="true">_</span>
-      </p>
+      <div class="terminal-window">
+        <div class="terminal-chrome">
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-title">— mujahid@dev: ~/portfolio — zsh</span>
+        </div>
+        <div class="terminal-body">
+          <!-- Command 1: whoami -->
+          <p class="prompt-line">
+            <span class="prompt-user">visitor@mujahid</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+            <span class="typed" id="typed-command-1"></span><span class="type-cursor" id="cursor-1" aria-hidden="true">_</span>
+          </p>
+          <div class="hero-output" id="hero-output-1">
+            <h1 class="hero-name">Mujahid Amin</h1>
+            <p class="hero-role">Flutter &amp; Mobile Developer</p>
+          </div>
 
-      <h1 class="hero-name">Mujahid Amin</h1>
-      <p class="hero-role">Flutter &amp; Mobile Developer</p>
+          <!-- Command 2: cat summary.txt -->
+          <p class="prompt-line" id="prompt-line-2" style="display:none;">
+            <span class="prompt-user">visitor@mujahid</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+            <span class="typed" id="typed-command-2"></span><span class="type-cursor" id="cursor-2" aria-hidden="true">_</span>
+          </p>
+          <div class="hero-output" id="hero-output-2">
+            <p class="hero-summary">
+              Two years building production-grade, cross-platform apps for iOS and Android —
+              across fintech, healthcare, and retail. I care about clean architecture,
+              state that doesn't lie to you, and payments that don't break at 2am.
+            </p>
+          </div>
 
-      <p class="hero-summary">
-        Two years building production-grade, cross-platform apps for iOS and Android —
-        across fintech, healthcare, and retail. I care about clean architecture,
-        state that doesn't lie to you, and payments that don't break at 2am.
-      </p>
+          <!-- Resting prompt -->
+          <p class="prompt-line prompt-resting" id="prompt-resting" style="display:none;">
+            <span class="prompt-user">visitor@mujahid</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+            <span class="type-cursor" aria-hidden="true">_</span>
+          </p>
+        </div>
+      </div>
 
       <div class="hero-actions">
         <a href="#experience" class="btn btn-primary">cat experience.log</a>
@@ -64,15 +107,33 @@
         <div><dt>timezone</dt><dd>GMT+1 (WAT)</dd></div>
         <div><dt>status</dt><dd><span class="dot"></span> open to select roles &amp; contracts</dd></div>
       </dl>
+
+      <p class="palette-hint">press <kbd>⌘K</kbd> to navigate</p>
     </div>
   </section>
+
+  <!-- ============ METRICS ============ -->
+  <div class="metrics-strip">
+    <div class="container">
+      <div class="metrics-inner">
+        <div class="metric" data-reveal style="--i:0">
+          <span class="metric-value" data-count-target="2">0</span><span class="metric-suffix">+</span>
+          <span class="metric-label">yrs experience</span>
+        </div>
+        <div class="metric" data-reveal style="--i:2">
+          <span class="metric-value" data-count-target="4">0</span>
+          <span class="metric-label">shipped projects</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ============ ABOUT ============ -->
   <section class="section" id="about">
     <div class="container">
-      <p class="section-label">~/about</p>
+      <p class="section-label" data-reveal style="--i:0">~/about</p>
       <div class="about-grid">
-        <div class="about-copy">
+        <div class="about-copy" data-reveal style="--i:1">
           <p>
             I'm a Flutter developer with two years of professional experience shipping
             mobile apps that real people depend on — not demos. My work spans a retail
@@ -87,15 +148,15 @@
           </p>
         </div>
         <div class="about-facts">
-          <div class="fact-card">
+          <div class="fact-card" data-reveal style="--i:2">
             <p class="fact-label">education</p>
             <p class="fact-value">B.Sc. Software Engineering<br>Bayero University, Kano</p>
           </div>
-          <div class="fact-card">
+          <div class="fact-card" data-reveal style="--i:3">
             <p class="fact-label">focus</p>
             <p class="fact-value">Flutter systems &amp; mobile architecture</p>
           </div>
-          <div class="fact-card">
+          <div class="fact-card" data-reveal style="--i:4">
             <p class="fact-label">also comfortable in</p>
             <p class="fact-value">Node.js, TypeScript, Express — backend for my own projects</p>
           </div>
@@ -107,11 +168,11 @@
   <!-- ============ EXPERIENCE ============ -->
   <section class="section" id="experience">
     <div class="container">
-      <p class="section-label">~/experience</p>
+      <p class="section-label" data-reveal style="--i:0">~/experience</p>
 
       <ol class="log-list">
 
-        <li class="log-entry">
+        <li class="log-entry" data-reveal style="--i:1">
           <div class="log-head">
             <p class="log-id">log#01 · Walure Capital</p>
             <p class="log-status log-status--current">current</p>
@@ -131,13 +192,12 @@
           </ul>
         </li>
 
-        <li class="log-entry">
+        <li class="log-entry" data-reveal style="--i:2">
           <div class="log-head">
             <p class="log-id">log#02 · Momentum Labs</p>
-            <!-- FLAG: confirm end date — you said 05/2026–Present, your CV PDF says 02/2026–08/2026 -->
           </div>
           <h3 class="log-title">Flutter Developer</h3>
-          <p class="log-meta">Nairobi, Kenya · Remote · 04/2026 – 09/2026</p>
+          <p class="log-meta">Nairobi, Kenya · Remote · 02/2026 – 08/2026</p>
           <p class="log-body">
             Building a production app for children's immunization tracking and
             scheduling, translating healthcare wireframes into well-documented Dart
@@ -151,7 +211,7 @@
           </ul>
         </li>
 
-        <li class="log-entry">
+        <li class="log-entry" data-reveal style="--i:3">
           <div class="log-head">
             <p class="log-id">log#03 · HNG Tech / HotelsNG</p>
           </div>
@@ -168,7 +228,7 @@
           </ul>
         </li>
 
-        <li class="log-entry">
+        <li class="log-entry" data-reveal style="--i:4">
           <div class="log-head">
             <p class="log-id">log#04 · SmartOffice Digital Solutions</p>
           </div>
@@ -193,51 +253,54 @@
   <!-- ============ PROJECTS ============ -->
   <section class="section" id="projects">
     <div class="container">
-      <p class="section-label">~/projects <span class="dim">-la --sort=featured</span></p>
+      <p class="section-label" data-reveal style="--i:0">~/projects <span class="dim">-la --sort=featured</span></p>
 
       <div class="project-list">
-        <article class="project-card">
+
+        <!-- iPOS -->
+        <article class="project-card" data-reveal style="--i:1">
           <div class="project-head">
             <p class="project-path">~/projects/iPOS <span class="dim">· branch: main · v1.2.0</span></p>
+            <span class="project-size">production</span>
           </div>
           <div class="project-body">
-            <!-- TODO: replace this placeholder with the FindHomes app icon or a screenshot (recommended 512x512 or 16:9 screenshot) -->
-            <div class="project-icon" aria-hidden="true">
-              <span>FH</span>
-            </div>
+            <img src="assets/iposlogo.png" alt="iPOS app icon" width="88" height="88" loading="lazy" class="project-app-icon">
             <div class="project-copy">
-              <h3>iPOS</h3>
-              <p class="project-tagline">iPOS</p>
+              <h3>iPOS by Walure</h3>
+              <p class="project-tagline">Retail POS platform · production fintech</p>
               <p class="project-desc">
-                IPOS By Walure offers an extensive and growing suite of powerful and flexible solutions to help automate our client's business processes. 
-                Its amazing features help manage sales, inventory, and purchase orders. It is a seamlessly integrated point of sale solution that is built to power your business, help to post orders at the counter or online, and register customers with wallet creation.
-                Regardless of the nature of your business, we have got you covered.
+                A comprehensive point-of-sale platform covering sales, inventory,
+                customer management, payments, and business reporting. Built responsive
+                Flutter interfaces across phone and tablet — adapting checkout, product,
+                and transaction workflows to different screen sizes inside a live,
+                revenue-generating application.
+              </p>
+              <p class="project-decision">
+                <span class="decision-label">→ architectural decision</span>
+                Responsive adaptive layouts for tablet and phone form factors within the
+                same codebase, with shared business logic and per-device UI compositions.
               </p>
               <ul class="project-tags">
                 <li>Flutter</li><li>Dio</li><li>Cloudinary</li><li>Paystack</li><li>Material 3</li>
               </ul>
               <div class="project-links">
-                <!-- TODO: point at your live app / demo if you have one -->
-                <a href="#" class="link-inline">$ inspect findhomes</a>
-                <!-- TODO: point at your GitHub repo -->
-                <a href="#" class="link-inline">[ view repo → ]</a>
+                <a href="https://play.google.com/store/apps/details?id=com.iposwalure.app" class="link-inline" target="_blank" rel="noopener">$ inspect ipos ↗</a>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="project-card">
+        <!-- FindHomes -->
+        <article class="project-card" data-reveal style="--i:2">
           <div class="project-head">
             <p class="project-path">~/projects/findhomes <span class="dim">· branch: main · v1.2.0</span></p>
+            <span class="project-size">fullstack</span>
           </div>
           <div class="project-body">
-            <!-- TODO: replace this placeholder with the FindHomes app icon or a screenshot (recommended 512x512 or 16:9 screenshot) -->
-            <div class="project-icon" aria-hidden="true">
-              <span>FH</span>
-            </div>
+            <img src="assets/findhomes.png" alt="FindHomes app icon" width="88" height="88" loading="lazy" class="project-app-icon">
             <div class="project-copy">
               <h3>FindHomes</h3>
-              <p class="project-tagline">Real estate app · production real estate platform</p>
+              <p class="project-tagline">Real estate app · fullstack production platform</p>
               <p class="project-desc">
                 A real estate app with multi-role onboarding for buyers, agents, and
                 admins, property CRUD, search and filter, inquiry management, and an
@@ -247,31 +310,27 @@
               <p class="project-decision">
                 <span class="decision-label">→ architectural decision</span>
                 Concurrent Cloudinary image uploads and idempotent Paystack
-                transaction handling, on top of a Material 3 design system built on
-                Clash Display + Inter.
+                transaction handling, with a FastAPI backend on PostgreSQL.
               </p>
               <ul class="project-tags">
-                <li>Flutter</li><li>Dio</li><li>Cloudinary</li><li>Paystack</li><li>Material 3</li>
+                <li>Flutter</li><li>Dio</li><li>Cloudinary</li><li>Paystack</li><li>FastAPI</li><li>PostgreSQL</li>
               </ul>
               <div class="project-links">
-                <!-- TODO: point at your live app / demo if you have one -->
-                <a href="#" class="link-inline">$ inspect findhomes</a>
-                <!-- TODO: point at your GitHub repo -->
-                <a href="#" class="link-inline">[ view repo → ]</a>
+                <a href="https://github.com/MujahidAmin1/FindHomes" class="link-inline" target="_blank" rel="noopener">[ view repo → ]</a>
+                <a href="https://real-estate-mgmt-api.onrender.com/docs" class="link-inline" target="_blank" rel="noopener">$ inspect api docs ↗</a>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="project-card">
+        <!-- CampusMart -->
+        <article class="project-card" data-reveal style="--i:3">
           <div class="project-head">
             <p class="project-path">~/projects/campusmart <span class="dim">· branch: main · v1.0.4</span></p>
+            <span class="project-size">final year</span>
           </div>
           <div class="project-body">
-            <!-- TODO: replace this placeholder with the CampusMart app icon or a screenshot -->
-            <div class="project-icon" aria-hidden="true">
-              <span>CM</span>
-            </div>
+            <img src="assets/campusmart.png" alt="CampusMart app icon" width="88" height="88" loading="lazy" class="project-app-icon">
             <div class="project-copy">
               <h3>CampusMart</h3>
               <p class="project-tagline">Campus marketplace platform</p>
@@ -290,8 +349,41 @@
                 <li>Flutter</li><li>Riverpod</li><li>Firestore</li><li>Firebase Auth</li><li>Paystack</li><li>Admin web</li>
               </ul>
               <div class="project-links">
-                <a href="#" class="link-inline">$ inspect campusmart</a>
-                <a href="#" class="link-inline">[ view repo → ]</a>
+                <a href="https://github.com/MujahidAmin1/CampusMart" class="link-inline" target="_blank" rel="noopener">[ view repo → ]</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chatty -->
+        <article class="project-card" data-reveal style="--i:4">
+          <div class="project-head">
+            <p class="project-path">~/projects/chatty <span class="dim">· branch: main · v1.0.0</span></p>
+            <span class="project-size">fullstack</span>
+          </div>
+          <div class="project-body">
+            <img src="assets/chatty.png" alt="Chatty app icon" width="88" height="88" loading="lazy" class="project-app-icon">
+            <div class="project-copy">
+              <h3>Chatty</h3>
+              <p class="project-tagline">Real-time chat app · fullstack</p>
+              <p class="project-desc">
+                A fullstack real-time chatting application with one-on-one and group
+                messaging, online status, typing indicators, and message history.
+                Built the Flutter mobile client with Socket.IO for real-time events
+                and a Node.js/Express backend with Prisma ORM and PostgreSQL.
+              </p>
+              <p class="project-decision">
+                <span class="decision-label">→ architectural decision</span>
+                Socket.IO reconnection with exponential backoff and optimistic message
+                sending — messages appear instantly in the UI while the backend confirms
+                delivery, with rollback on failure.
+              </p>
+              <ul class="project-tags">
+                <li>Flutter</li><li>Socket.IO</li><li>Node.js</li><li>Express</li><li>Prisma</li><li>PostgreSQL</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/MujahidAmin1/Chatty" class="link-inline" target="_blank" rel="noopener">[ view repo → ]</a>
+                <a href="https://chat-app-backend-3w5e.onrender.com/docs" class="link-inline" target="_blank" rel="noopener">$ inspect api docs ↗</a>
               </div>
             </div>
           </div>
@@ -304,9 +396,9 @@
   <!-- ============ STACK ============ -->
   <section class="section" id="stack">
     <div class="container">
-      <p class="section-label">~/stack <span class="dim">cat dependencies.lock</span></p>
+      <p class="section-label" data-reveal style="--i:0">~/stack <span class="dim">cat dependencies.lock</span></p>
 
-      <div class="table-wrap">
+      <div class="table-wrap" data-reveal style="--i:1">
         <table class="stack-table">
           <thead>
             <tr>
@@ -345,10 +437,10 @@
   <!-- ============ CONTACT ============ -->
   <section class="section" id="contact">
     <div class="container">
-      <p class="section-label">~/contact <span class="dim">--email</span></p>
+      <p class="section-label" data-reveal style="--i:0">~/contact <span class="dim">--email</span></p>
 
       <div class="contact-grid">
-        <div class="contact-copy">
+        <div class="contact-copy" data-reveal style="--i:1">
           <p>
             Open to select mobile roles and contracts — reach out for
             high-concurrency client work, or if you just want to talk architecture.
@@ -365,8 +457,7 @@
           <div class="contact-item">
             <p class="contact-item-label">github</p>
             <div class="contact-item-value">
-              <!-- TODO: replace # with your actual GitHub profile URL -->
-              <a href="https://github.com/mujahidamin1" target="_blank" rel="noopener">My Github</a>
+              <a href="https://github.com/mujahidamin1" target="_blank" rel="noopener">github.com/mujahidamin1</a>
               <span class="open-tag">[ open ↗ ]</span>
             </div>
           </div>
@@ -374,8 +465,7 @@
           <div class="contact-item">
             <p class="contact-item-label">linkedin</p>
             <div class="contact-item-value">
-              <!-- TODO: replace # with your actual LinkedIn profile URL -->
-              <a href="https://www.linkedin.com/in/mujahid-amin-28b3a6235" target="_blank" rel="noopener">Linkedin</a>
+              <a href="https://www.linkedin.com/in/mujahid-amin-28b3a6235" target="_blank" rel="noopener">linkedin.com/in/mujahid-amin</a>
               <span class="open-tag">[ open ↗ ]</span>
             </div>
           </div>
@@ -383,7 +473,7 @@
           <p class="contact-status"><span class="dot"></span> status: open for select roles &amp; contracts · timezone: WAT (UTC+1)</p>
         </div>
 
-        <form class="contact-form" id="contact-form">
+        <form class="contact-form" id="contact-form" data-reveal style="--i:2">
           <p class="form-terminal-line"><span class="prompt-dollar">$</span> mail -s "Opportunity" mujahid@dev</p>
 
           <label for="from-email">from: (your email)</label>
@@ -404,15 +494,27 @@
 
 </main>
 
+<!-- ============ COMMAND PALETTE ============ -->
+<div class="palette-overlay" id="palette-overlay" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+  <div class="palette-panel">
+    <div class="palette-input-row">
+      <span class="palette-prompt" aria-hidden="true">&gt;</span>
+      <input type="text" class="palette-input" id="palette-input" placeholder="Type a command..." autocomplete="off" />
+    </div>
+    <ul class="palette-results" id="palette-results" role="listbox">
+    </ul>
+    <p class="palette-footer">↑↓ navigate · enter select · esc close</p>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="container footer-inner">
     <p>© 2026 Mujahid Amin — Nigeria (WAT UTC+1)</p>
     <div class="footer-links">
-      <!-- TODO: update these to match the real links above -->
-      <a href="#" target="_blank" rel="noopener">github</a>
-      <a href="#" target="_blank" rel="noopener">linkedin</a>
+      <a href="https://github.com/mujahidamin1" target="_blank" rel="noopener">github</a>
+      <a href="https://www.linkedin.com/in/mujahid-amin-28b3a6235" target="_blank" rel="noopener">linkedin</a>
       <a href="mailto:mujahidameen205@gmail.com">email</a>
-      <a href="https://drive.google.com/file/d/1W25ZlPjyRTFhGExNmx1rqFxZ4CQLVTfq/view?usp=sharing" download>resume</a>
+      <a href="https://drive.google.com/file/d/1W25ZlPjyRTFhGExNmx1rqFxZ4CQLVTfq/view?usp=sharing" target="_blank" rel="noopener">resume</a>
     </div>
   </div>
 </footer>
