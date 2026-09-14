@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mujahid Amin — Flutter &amp; Mobile Developer</title>
+<meta name="description" content="Flutter and mobile developer building production-grade cross-platform apps. 2 years of experience across fintech, healthcare, and retail.">
+
+<!-- TODO: replace with your own favicon -->
+<link rel="icon" href="data:,">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">mujahid<span class="accent">@</span>dev<span class="cursor-static">_</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#stack">stack</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <!-- TODO: point this at your actual resume PDF once hosted -->
+    <a href="mujahid_mobile_resume.pdf" class="nav-resume" download>resume.pdf</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="container">
+      <p class="prompt-line">
+        <span class="prompt-user">visitor@mujahid</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+        <span class="typed" id="typed-command"></span><span class="type-cursor" aria-hidden="true">_</span>
+      </p>
+
+      <h1 class="hero-name">Mujahid Amin</h1>
+      <p class="hero-role">Flutter &amp; Mobile Developer</p>
+
+      <p class="hero-summary">
+        Two years building production-grade, cross-platform apps for iOS and Android —
+        across fintech, healthcare, and retail. I care about clean architecture,
+        state that doesn't lie to you, and payments that don't break at 2am.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#experience" class="btn btn-primary">cat experience.log</a>
+        <a href="#projects" class="btn btn-ghost">$ inspect projects</a>
+      </div>
+
+      <dl class="hero-meta">
+        <div><dt>role</dt><dd>Flutter &amp; Mobile Engineer</dd></div>
+        <div><dt>timezone</dt><dd>GMT+1 (WAT)</dd></div>
+        <div><dt>status</dt><dd><span class="dot"></span> open to select roles &amp; contracts</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section-label">~/about</p>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>
+            I'm a Flutter developer with two years of professional experience shipping
+            mobile apps that real people depend on — not demos. My work spans a retail
+            POS platform, a healthcare immunization tracker, a real-time collaboration
+            tool used by over a thousand people, and a couple of side projects I built
+            end to end because I wanted to own the whole stack for once.
+          </p>
+          <p>
+            I studied Software Engineering at Bayero University, Kano, and I lean on
+            clean architecture — service, repository, and controller layers kept
+            separate — so the apps I build stay easy to test, extend, and hand off.
+          </p>
+        </div>
+        <div class="about-facts">
+          <div class="fact-card">
+            <p class="fact-label">education</p>
+            <p class="fact-value">B.Sc. Software Engineering<br>Bayero University, Kano</p>
+          </div>
+          <div class="fact-card">
+            <p class="fact-label">focus</p>
+            <p class="fact-value">Flutter systems &amp; mobile architecture</p>
+          </div>
+          <div class="fact-card">
+            <p class="fact-label">also comfortable in</p>
+            <p class="fact-value">Node.js, TypeScript, Express — backend for my own projects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <p class="section-label">~/experience</p>
+
+      <ol class="log-list">
+
+        <li class="log-entry">
+          <div class="log-head">
+            <p class="log-id">log#01 · Walure Capital</p>
+            <p class="log-status log-status--current">current</p>
+          </div>
+          <h3 class="log-title">Mobile Developer</h3>
+          <p class="log-meta">Lagos, Nigeria · Remote · 07/2026 – Present</p>
+          <p class="log-body">
+            Building and maintaining features for IPOS by Smartware, a retail
+            point-of-sale platform covering sales, inventory, customer management,
+            payments, and business reporting. Responsible for responsive Flutter
+            interfaces across phone and tablet — adapting checkout, product, and
+            transaction workflows to different screen sizes inside a live,
+            revenue-generating application.
+          </p>
+          <ul class="log-tags">
+            <li>Flutter</li><li>Tablet &amp; mobile UI</li><li>POS systems</li><li>Live production</li>
+          </ul>
+        </li>
+
+        <li class="log-entry">
+          <div class="log-head">
+            <p class="log-id">log#02 · Momentum Labs</p>
+            <!-- FLAG: confirm end date — you said 05/2026–Present, your CV PDF says 02/2026–08/2026 -->
+          </div>
+          <h3 class="log-title">Flutter Developer</h3>
+          <p class="log-meta">Nairobi, Kenya · Remote · 04/2026 – 09/2026</p>
+          <p class="log-body">
+            Building a production app for children's immunization tracking and
+            scheduling, translating healthcare wireframes into well-documented Dart
+            features over secured REST endpoints. Implemented Riverpod state
+            management across multi-screen flows with a strict Repository +
+            Controller split, and enforced health-data security practices — Firebase
+            Auth with role-based access and encrypted local caching.
+          </p>
+          <ul class="log-tags">
+            <li>Dart</li><li>Riverpod</li><li>Repository + Controller</li><li>Firebase Auth</li><li>Encrypted cache</li>
+          </ul>
+        </li>
+
+        <li class="log-entry">
+          <div class="log-head">
+            <p class="log-id">log#03 · HNG Tech / HotelsNG</p>
+          </div>
+          <h3 class="log-title">Mobile Developer</h3>
+          <p class="log-meta">Nigeria · Remote · 04/2026 – 06/2026</p>
+          <p class="log-body">
+            Worked on Zedu, a real-time collaboration workspace, shipping to over 1,000
+            active users on its current web version. Owned feature implementation,
+            state synchronization, performance stability, and release packaging
+            under compressed sprint cycles.
+          </p>
+          <ul class="log-tags">
+            <li>Flutter</li><li>Real-time sync</li><li>Sprint delivery</li><li>Crash triage</li>
+          </ul>
+        </li>
+
+        <li class="log-entry">
+          <div class="log-head">
+            <p class="log-id">log#04 · SmartOffice Digital Solutions</p>
+          </div>
+          <h3 class="log-title">Mobile Developer Intern</h3>
+          <p class="log-meta">Kaduna, Nigeria · 11/2024 – 05/2025</p>
+          <p class="log-body">
+            Designed, built, and deployed a cross-platform Smart Utility Toolkit —
+            unit converters, BMI and loan calculators — with Hive-backed offline
+            persistence. Also built expense-tracking and task-management apps in a
+            six-person team, applying Repository + Controller architecture
+            throughout.
+          </p>
+          <ul class="log-tags">
+            <li>Flutter</li><li>Hive persistence</li><li>Repository + Controller</li>
+          </ul>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="section-label">~/projects <span class="dim">-la --sort=featured</span></p>
+
+      <div class="project-list">
+        <article class="project-card">
+          <div class="project-head">
+            <p class="project-path">~/projects/iPOS <span class="dim">· branch: main · v1.2.0</span></p>
+          </div>
+          <div class="project-body">
+            <!-- TODO: replace this placeholder with the FindHomes app icon or a screenshot (recommended 512x512 or 16:9 screenshot) -->
+            <div class="project-icon" aria-hidden="true">
+              <span>FH</span>
+            </div>
+            <div class="project-copy">
+              <h3>iPOS</h3>
+              <p class="project-tagline">iPOS</p>
+              <p class="project-desc">
+                IPOS By Walure offers an extensive and growing suite of powerful and flexible solutions to help automate our client's business processes. 
+                Its amazing features help manage sales, inventory, and purchase orders. It is a seamlessly integrated point of sale solution that is built to power your business, help to post orders at the counter or online, and register customers with wallet creation.
+                Regardless of the nature of your business, we have got you covered.
+              </p>
+              <ul class="project-tags">
+                <li>Flutter</li><li>Dio</li><li>Cloudinary</li><li>Paystack</li><li>Material 3</li>
+              </ul>
+              <div class="project-links">
+                <!-- TODO: point at your live app / demo if you have one -->
+                <a href="#" class="link-inline">$ inspect findhomes</a>
+                <!-- TODO: point at your GitHub repo -->
+                <a href="#" class="link-inline">[ view repo → ]</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <p class="project-path">~/projects/findhomes <span class="dim">· branch: main · v1.2.0</span></p>
+          </div>
+          <div class="project-body">
+            <!-- TODO: replace this placeholder with the FindHomes app icon or a screenshot (recommended 512x512 or 16:9 screenshot) -->
+            <div class="project-icon" aria-hidden="true">
+              <span>FH</span>
+            </div>
+            <div class="project-copy">
+              <h3>FindHomes</h3>
+              <p class="project-tagline">Real estate app · production real estate platform</p>
+              <p class="project-desc">
+                A real estate app with multi-role onboarding for buyers, agents, and
+                admins, property CRUD, search and filter, inquiry management, and an
+                in-app payment flow. REST backend integrated via Dio with clean
+                service, repository, and controller layers.
+              </p>
+              <p class="project-decision">
+                <span class="decision-label">→ architectural decision</span>
+                Concurrent Cloudinary image uploads and idempotent Paystack
+                transaction handling, on top of a Material 3 design system built on
+                Clash Display + Inter.
+              </p>
+              <ul class="project-tags">
+                <li>Flutter</li><li>Dio</li><li>Cloudinary</li><li>Paystack</li><li>Material 3</li>
+              </ul>
+              <div class="project-links">
+                <!-- TODO: point at your live app / demo if you have one -->
+                <a href="#" class="link-inline">$ inspect findhomes</a>
+                <!-- TODO: point at your GitHub repo -->
+                <a href="#" class="link-inline">[ view repo → ]</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <p class="project-path">~/projects/campusmart <span class="dim">· branch: main · v1.0.4</span></p>
+          </div>
+          <div class="project-body">
+            <!-- TODO: replace this placeholder with the CampusMart app icon or a screenshot -->
+            <div class="project-icon" aria-hidden="true">
+              <span>CM</span>
+            </div>
+            <div class="project-copy">
+              <h3>CampusMart</h3>
+              <p class="project-tagline">Campus marketplace platform</p>
+              <p class="project-desc">
+                A full-featured marketplace for trading used items on campus —
+                product browsing, smart search, real-time order tracking, and
+                Paystack payments, shipped cross-platform on Android and iOS.
+              </p>
+              <p class="project-decision">
+                <span class="decision-label">→ architectural decision</span>
+                Riverpod StateNotifier across buyer and admin surfaces, Firestore
+                for real-time sync, and a companion web admin panel sharing domain
+                logic with the mobile app from a single Flutter codebase.
+              </p>
+              <ul class="project-tags">
+                <li>Flutter</li><li>Riverpod</li><li>Firestore</li><li>Firebase Auth</li><li>Paystack</li><li>Admin web</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" class="link-inline">$ inspect campusmart</a>
+                <a href="#" class="link-inline">[ view repo → ]</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STACK ============ -->
+  <section class="section" id="stack">
+    <div class="container">
+      <p class="section-label">~/stack <span class="dim">cat dependencies.lock</span></p>
+
+      <div class="table-wrap">
+        <table class="stack-table">
+          <thead>
+            <tr>
+              <th scope="col">subsystem</th>
+              <th scope="col">primary technology</th>
+              <th scope="col">specification / architecture</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="subsystem" class="accent-cell">Mobile &amp; architecture</td>
+              <td data-label="tech">Dart, Flutter, Riverpod</td>
+              <td data-label="spec">Provider, Clean Architecture, Repository + Controller</td>
+            </tr>
+            <tr>
+              <td data-label="subsystem" class="accent-cell">Backend &amp; APIs</td>
+              <td data-label="tech">REST API integration, Node.js</td>
+              <td data-label="spec">TypeScript, Express, PostgreSQL, Prisma</td>
+            </tr>
+            <tr>
+              <td data-label="subsystem" class="accent-cell">Cloud &amp; services</td>
+              <td data-label="tech">Firebase, Firestore</td>
+              <td data-label="spec">Firebase Auth, App Distribution, Cloudinary, Paystack</td>
+            </tr>
+            <tr>
+              <td data-label="subsystem" class="accent-cell">Testing &amp; DevOps</td>
+              <td data-label="tech">Unit / widget / integration testing</td>
+              <td data-label="spec">Git, GitHub Actions, CI/CD, Google Play Store</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <p class="section-label">~/contact <span class="dim">--email</span></p>
+
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <p>
+            Open to select mobile roles and contracts — reach out for
+            high-concurrency client work, or if you just want to talk architecture.
+          </p>
+
+          <div class="contact-item">
+            <p class="contact-item-label">email</p>
+            <div class="contact-item-value">
+              <span id="contact-email">mujahidameen205@gmail.com</span>
+              <button type="button" class="copy-btn" data-copy-target="contact-email">[ copy ]</button>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <p class="contact-item-label">github</p>
+            <div class="contact-item-value">
+              <!-- TODO: replace # with your actual GitHub profile URL -->
+              <a href="https://github.com/mujahidamin1" target="_blank" rel="noopener">My Github</a>
+              <span class="open-tag">[ open ↗ ]</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <p class="contact-item-label">linkedin</p>
+            <div class="contact-item-value">
+              <!-- TODO: replace # with your actual LinkedIn profile URL -->
+              <a href="https://www.linkedin.com/in/mujahid-amin-28b3a6235" target="_blank" rel="noopener">Linkedin</a>
+              <span class="open-tag">[ open ↗ ]</span>
+            </div>
+          </div>
+
+          <p class="contact-status"><span class="dot"></span> status: open for select roles &amp; contracts · timezone: WAT (UTC+1)</p>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+          <p class="form-terminal-line"><span class="prompt-dollar">$</span> mail -s "Opportunity" mujahid@dev</p>
+
+          <label for="from-email">from: (your email)</label>
+          <input type="email" id="from-email" name="from-email" required placeholder="you@company.com">
+
+          <label for="subject">subject: (brief scope)</label>
+          <input type="text" id="subject" name="subject" required placeholder="Mobile architecture / rate inquiry">
+
+          <label for="body">body_payload:</label>
+          <textarea id="body" name="body" rows="5" required placeholder="Brief project specifics, timeline, and stack requirements..."></textarea>
+
+          <button type="submit" class="btn btn-primary btn-full">[ transmit message ] &gt;</button>
+          <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 Mujahid Amin — Nigeria (WAT UTC+1)</p>
+    <div class="footer-links">
+      <!-- TODO: update these to match the real links above -->
+      <a href="#" target="_blank" rel="noopener">github</a>
+      <a href="#" target="_blank" rel="noopener">linkedin</a>
+      <a href="mailto:mujahidameen205@gmail.com">email</a>
+      <a href="https://drive.google.com/file/d/1W25ZlPjyRTFhGExNmx1rqFxZ4CQLVTfq/view?usp=sharing" download>resume</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
