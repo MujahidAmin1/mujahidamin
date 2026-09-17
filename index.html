@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mujahid Amin — Flutter &amp; Mobile Developer</title>
+<title>Mujahid Amin — Mobile Engineer</title>
 <meta name="description" content="Flutter and mobile developer building production-grade cross-platform apps. 2+ years of experience across fintech, healthcare, and retail.">
 <meta name="theme-color" content="#0A0A0B">
 <meta name="color-scheme" content="dark">
@@ -49,6 +49,10 @@
       <span class="nav-indicator" aria-hidden="true"></span>
     </nav>
     <button class="nav-palette-btn" id="nav-palette-btn" aria-label="Open command palette (⌘K)">⌘K</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
     <a href="https://drive.google.com/file/d/1W25ZlPjyRTFhGExNmx1rqFxZ4CQLVTfq/view?usp=sharing" class="nav-resume" target="_blank" rel="noopener">resume.pdf</a>
   </div>
 </header>
@@ -73,7 +77,7 @@
           </p>
           <div class="hero-output" id="hero-output-1">
             <h1 class="hero-name">Mujahid Amin</h1>
-            <p class="hero-role">Flutter &amp; Mobile Developer</p>
+            <p class="hero-role">Mobile Engineer</p>
           </div>
 
           <!-- Command 2: cat summary.txt -->
@@ -135,16 +139,17 @@
       <div class="about-grid">
         <div class="about-copy" data-reveal style="--i:1">
           <p>
-            I'm a Flutter developer with two years of professional experience shipping
-            mobile apps that real people depend on — not demos. My work spans a retail
-            POS platform, a healthcare immunization tracker, a real-time collaboration
-            tool used by over a thousand people, and a couple of side projects I built
-            end to end because I wanted to own the whole stack for once.
+            I build things people pay money through. For two years I've shipped
+            Flutter apps that handle transactions, real patient data, and
+            real users who notice when something breaks — a retail POS platform
+            processing live payments, an immunization tracker with encrypted
+            health records, and a collaboration tool used by 1 000+ people.
           </p>
           <p>
-            I studied Software Engineering at Bayero University, Kano, and I lean on
-            clean architecture — service, repository, and controller layers kept
-            separate — so the apps I build stay easy to test, extend, and hand off.
+            When I'm not at work I'm still building — fullstack side projects
+            (Flutter + Node/Express) where I own the database, the API, and the
+            deploy. I like knowing every layer because it means fewer surprises
+            at 2am.
           </p>
         </div>
         <div class="about-facts">
@@ -153,12 +158,16 @@
             <p class="fact-value">B.Sc. Software Engineering<br>Bayero University, Kano</p>
           </div>
           <div class="fact-card" data-reveal style="--i:3">
-            <p class="fact-label">focus</p>
-            <p class="fact-value">Flutter systems &amp; mobile architecture</p>
+            <p class="fact-label">day-to-day</p>
+            <p class="fact-value">Flutter, Dart, Riverpod, clean arch (Repository + Controller)</p>
           </div>
           <div class="fact-card" data-reveal style="--i:4">
-            <p class="fact-label">also comfortable in</p>
-            <p class="fact-value">Node.js, TypeScript, Express — backend for my own projects</p>
+            <p class="fact-label">also ships</p>
+            <p class="fact-value">Node.js · Express · TypeScript · PostgreSQL · Prisma — backend for my own projects</p>
+          </div>
+          <div class="fact-card" data-reveal style="--i:5">
+            <p class="fact-label">approach</p>
+            <p class="fact-value">Service → repository → controller layers, tested and easy to hand off</p>
           </div>
         </div>
       </div>
@@ -437,13 +446,13 @@
   <!-- ============ CONTACT ============ -->
   <section class="section" id="contact">
     <div class="container">
-      <p class="section-label" data-reveal style="--i:0">~/contact <span class="dim">--email</span></p>
+      <p class="section-label" data-reveal style="--i:0">~/contact <span class="dim">--get-in-touch</span></p>
 
       <div class="contact-grid">
         <div class="contact-copy" data-reveal style="--i:1">
           <p>
-            Open to select mobile roles and contracts — reach out for
-            high-concurrency client work, or if you just want to talk architecture.
+            Have a project in mind, a role to fill, or just want to talk mobile engineering?
+            Drop a note below or reach out directly.
           </p>
 
           <div class="contact-item">
@@ -473,19 +482,19 @@
           <p class="contact-status"><span class="dot"></span> status: open for select roles &amp; contracts · timezone: WAT (UTC+1)</p>
         </div>
 
-        <form class="contact-form" id="contact-form" data-reveal style="--i:2">
-          <p class="form-terminal-line"><span class="prompt-dollar">$</span> mail -s "Opportunity" mujahid@dev</p>
+        <form class="contact-form" id="contact-form" data-reveal style="--i:2" action="https://formspree.io/f/mnpnqdpb" method="POST">
+          <p class="form-terminal-line"><span class="prompt-dollar">$</span> send-message <span class="dim">--to mujahid</span></p>
 
-          <label for="from-email">from: (your email)</label>
-          <input type="email" id="from-email" name="from-email" required placeholder="you@company.com">
+          <label for="from-email">Your Email</label>
+          <input type="email" id="from-email" name="email" required placeholder="you@company.com">
 
-          <label for="subject">subject: (brief scope)</label>
-          <input type="text" id="subject" name="subject" required placeholder="Mobile architecture / rate inquiry">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="_subject" required placeholder="Mobile project inquiry, role, or collaboration">
 
-          <label for="body">body_payload:</label>
-          <textarea id="body" name="body" rows="5" required placeholder="Brief project specifics, timeline, and stack requirements..."></textarea>
+          <label for="body">Message</label>
+          <textarea id="body" name="message" rows="5" required placeholder="Tell me about your project, timeline, or what you're looking to build..."></textarea>
 
-          <button type="submit" class="btn btn-primary btn-full">[ transmit message ] &gt;</button>
+          <button type="submit" id="form-submit-btn" class="btn btn-primary btn-full">[ send message ] &gt;</button>
           <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
         </form>
       </div>

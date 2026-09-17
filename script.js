@@ -9,6 +9,51 @@ console.log(
 console.log('%cCurious? github.com/mujahidamin1', 'color:#5B5E64');
 
 // ==========================================================
+// Theme toggle — dark/light with localStorage + system pref
+// ==========================================================
+(function themeToggle() {
+  var toggle = document.getElementById('theme-toggle');
+  var root = document.documentElement;
+  var STORAGE_KEY = 'portfolio-theme';
+
+  function getSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      root.setAttribute('data-theme', 'light');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    // Update meta theme-color
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', theme === 'light' ? '#F8F6F2' : '#0A0A0B');
+  }
+
+  // Initialize: saved pref > system pref > dark
+  var saved = localStorage.getItem(STORAGE_KEY);
+  var initial = saved || getSystemTheme();
+  applyTheme(initial);
+
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem(STORAGE_KEY, next);
+    });
+  }
+
+  // Listen for system preference changes (only if no saved pref)
+  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      applyTheme(e.matches ? 'light' : 'dark');
+    }
+  });
+})();
+
+// ==========================================================
 // Hero terminal boot sequence — types two commands then rests
 // ==========================================================
 (function typeHero() {
@@ -154,12 +199,15 @@ console.log('%cCurious? github.com/mujahidamin1', 'color:#5B5E64');
 })();
 
 // ==========================================================
-// Contact form — polished mailto with validation
+// Contact form — Formspree AJAX with validation
 // ==========================================================
 (function contactForm() {
   var form = document.getElementById('contact-form');
   var note = document.getElementById('form-note');
+  var submitBtn = document.getElementById('form-submit-btn');
   if (!form || !note) return;
+
+  var FORMSPREE_URL = 'https://formspree.io/f/mnpnqdpb';
 
   function clearErrors() {
     form.querySelectorAll('.is-error').forEach(function (el) {
@@ -174,6 +222,13 @@ console.log('%cCurious? github.com/mujahidamin1', 'color:#5B5E64');
     if (field) field.classList.add('is-error');
     note.classList.add('is-error');
     note.textContent = '> error: ' + message;
+  }
+
+  function setSubmitting(busy) {
+    if (submitBtn) {
+      submitBtn.disabled = busy;
+      submitBtn.textContent = busy ? '[ sending... ]' : '[ send message ] >';
+    }
   }
 
   // Clear errors on focus
@@ -195,31 +250,51 @@ console.log('%cCurious? github.com/mujahidamin1', 'color:#5B5E64');
     var subject = document.getElementById('subject').value.trim();
     var body = document.getElementById('body').value.trim();
 
-    // Validate email
+    // Client-side validation
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!fromEmail || !emailRegex.test(fromEmail)) {
-      showError('from-email', 'invalid email format — check the from field');
+      showError('from-email', 'please enter a valid email address');
       return;
     }
-
     if (!subject) {
-      showError('subject', 'subject cannot be empty');
+      showError('subject', 'please enter a subject');
       return;
     }
-
     if (!body) {
-      showError('body', 'message body cannot be empty');
+      showError('body', 'please enter your message');
       return;
     }
 
-    var mailtoLink = 'mailto:mujahidameen205@gmail.com?subject=' +
-      encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent('From: ' + fromEmail + '\n\n' + body);
+    setSubmitting(true);
 
-    window.location.href = mailtoLink;
+    var formData = new FormData(form);
 
-    note.classList.remove('is-error');
-    note.textContent = '> message handed off to your mail client — check your outbox';
+    fetch(FORMSPREE_URL, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (response) {
+      setSubmitting(false);
+      if (response.ok) {
+        note.classList.remove('is-error');
+        note.textContent = '> message sent successfully — I\'ll get back to you soon';
+        form.reset();
+      } else {
+        return response.json().then(function (data) {
+          if (data.errors) {
+            var messages = data.errors.map(function (err) { return err.message; }).join(', ');
+            showError('from-email', messages);
+          } else {
+            showError('from-email', 'failed to send message — please try again or email me directly');
+          }
+        });
+      }
+    })
+    .catch(function () {
+      setSubmitting(false);
+      showError('from-email', 'network error — please check your connection and retry');
+    });
   });
 })();
 
@@ -365,6 +440,10 @@ console.log('%cCurious? github.com/mujahidamin1', 'color:#5B5E64');
     }},
     { group: 'Action', label: 'Download résumé', action: function () {
       window.open('https://drive.google.com/file/d/1W25ZlPjyRTFhGExNmx1rqFxZ4CQLVTfq/view?usp=sharing', '_blank');
+    }},
+    { group: 'Action', label: 'Toggle theme', action: function () {
+      var btn = document.getElementById('theme-toggle');
+      if (btn) btn.click();
     }}
   ];
 
