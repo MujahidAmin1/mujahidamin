@@ -313,6 +313,13 @@ console.log('%cCurious? github.com/mujahidamin1', 'color:#5B5E64');
     map.set(id, link);
   });
 
+  var drawerLinks = document.querySelectorAll('.drawer-link');
+  var drawerMap = new Map();
+  drawerLinks.forEach(function (link) {
+    var id = link.getAttribute('href').replace('#', '');
+    drawerMap.set(id, link);
+  });
+
   function moveIndicator(activeLink) {
     if (!indicator || !activeLink) return;
     var parentRect = activeLink.parentElement.getBoundingClientRect();
@@ -325,11 +332,17 @@ console.log('%cCurious? github.com/mujahidamin1', 'color:#5B5E64');
     function (entries) {
       entries.forEach(function (entry) {
         var link = map.get(entry.target.id);
-        if (!link) return;
+        var drawerLink = drawerMap.get(entry.target.id);
         if (entry.isIntersecting) {
-          navLinks.forEach(function (l) { l.classList.remove('is-active'); });
-          link.classList.add('is-active');
-          moveIndicator(link);
+          if (link) {
+            navLinks.forEach(function (l) { l.classList.remove('is-active'); });
+            link.classList.add('is-active');
+            moveIndicator(link);
+          }
+          if (drawerLink) {
+            drawerLinks.forEach(function (dl) { dl.classList.remove('is-active'); });
+            drawerLink.classList.add('is-active');
+          }
         }
       });
     },
@@ -342,6 +355,67 @@ console.log('%cCurious? github.com/mujahidamin1', 'color:#5B5E64');
   window.addEventListener('resize', function () {
     var active = document.querySelector('.nav-links a.is-active');
     if (active) moveIndicator(active);
+  });
+})();
+
+// ==========================================================
+// Mobile Navigation Drawer
+// ==========================================================
+(function mobileDrawer() {
+  var toggleBtn = document.getElementById('nav-toggle-btn');
+  var closeBtn = document.getElementById('drawer-close-btn');
+  var backdrop = document.getElementById('drawer-backdrop');
+  var drawer = document.getElementById('mobile-drawer');
+  var drawerLinks = document.querySelectorAll('.drawer-link');
+
+  if (!toggleBtn || !drawer || !backdrop) return;
+
+  function openDrawer() {
+    drawer.hidden = false;
+    drawer.offsetHeight;
+    drawer.classList.add('is-open');
+    backdrop.classList.add('is-open');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('drawer-open');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('drawer-open');
+    setTimeout(function () {
+      drawer.hidden = true;
+    }, 250);
+  }
+
+  toggleBtn.addEventListener('click', function () {
+    var isOpen = drawer.classList.contains('is-open');
+    if (isOpen) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  backdrop.addEventListener('click', closeDrawer);
+
+  drawerLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      closeDrawer();
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      closeDrawer();
+      toggleBtn.focus();
+    }
   });
 })();
 

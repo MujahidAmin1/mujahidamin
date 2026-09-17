@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mujahid Amin — Mobile Engineer</title>
 <meta name="description" content="Flutter and mobile developer building production-grade cross-platform apps. 2+ years of experience across fintech, healthcare, and retail.">
+<meta name="keywords" content="Mujahid Amin, Flutter Developer, Mobile Engineer, iOS Developer, Android Developer, Mobile App Developer, Dart, Clean Architecture, Cross-Platform Development, Firebase, REST APIs, State Management, BLoC, Provider, Full Stack Mobile, Software Engineer Nigeria, Mobile App Architecture">
+<meta name="author" content="Mujahid Amin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/mujahidamin1">
 <meta name="theme-color" content="#0A0A0B">
 <meta name="color-scheme" content="dark">
 
@@ -22,6 +26,35 @@
 <meta name="twitter:title" content="Mujahid Amin — Flutter &amp; Mobile Developer">
 <meta name="twitter:description" content="Flutter and mobile developer building production-grade cross-platform apps.">
 <meta name="twitter:image" content="assets/og-image.png">
+
+<!-- Structured Data (JSON-LD) for Search Engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mujahid Amin",
+  "jobTitle": "Mobile Engineer",
+  "alternateName": "Mujahid",
+  "url": "https://github.com/mujahidamin1",
+  "sameAs": [
+    "https://github.com/mujahidamin1",
+    "https://www.linkedin.com/in/mujahid-amin-28b3a6235"
+  ],
+  "knowsAbout": [
+    "Flutter",
+    "Dart",
+    "iOS Development",
+    "Android Development",
+    "Mobile Architecture",
+    "BLoC",
+    "State Management",
+    "Firebase",
+    "REST APIs",
+    "Cross-Platform Apps"
+  ],
+  "description": "Flutter and mobile developer building production-grade cross-platform apps for iOS and Android. 2+ years of experience across fintech, healthcare, and retail."
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,14 +81,56 @@
       <a href="#contact">contact</a>
       <span class="nav-indicator" aria-hidden="true"></span>
     </nav>
-    <button class="nav-palette-btn" id="nav-palette-btn" aria-label="Open command palette (⌘K)">⌘K</button>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
-    <a href="https://drive.google.com/file/d/1W25ZlPjyRTFhGExNmx1rqFxZ4CQLVTfq/view?usp=sharing" class="nav-resume" target="_blank" rel="noopener">resume.pdf</a>
+    <div class="nav-actions">
+      <button class="nav-palette-btn" id="nav-palette-btn" aria-label="Open command palette (⌘K)">⌘K</button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="https://drive.google.com/file/d/1W25ZlPjyRTFhGExNmx1rqFxZ4CQLVTfq/view?usp=sharing" class="nav-resume" target="_blank" rel="noopener">resume.pdf</a>
+      <button class="nav-toggle-btn" id="nav-toggle-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span class="nav-toggle-icon" aria-hidden="true">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </span>
+      </button>
+    </div>
   </div>
 </header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+<aside class="drawer-panel" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu" hidden>
+  <div class="drawer-header">
+    <div class="drawer-title">
+      <span class="prompt-user">visitor@mujahid</span><span class="prompt-sep">:</span><span class="prompt-path">~/nav</span><span class="prompt-dollar">$</span>
+    </div>
+    <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close menu">[ &times; ]</button>
+  </div>
+
+  <nav class="drawer-nav" aria-label="Mobile Navigation">
+    <a href="#about" class="drawer-link"><span class="drawer-num">01.</span> <span class="drawer-label">about</span></a>
+    <a href="#experience" class="drawer-link"><span class="drawer-num">02.</span> <span class="drawer-label">experience</span></a>
+    <a href="#projects" class="drawer-link"><span class="drawer-num">03.</span> <span class="drawer-label">projects</span></a>
+    <a href="#stack" class="drawer-link"><span class="drawer-num">04.</span> <span class="drawer-label">stack</span></a>
+    <a href="#contact" class="drawer-link"><span class="drawer-num">05.</span> <span class="drawer-label">contact</span></a>
+  </nav>
+
+  <div class="drawer-footer">
+    <a href="https://drive.google.com/file/d/1W25ZlPjyRTFhGExNmx1rqFxZ4CQLVTfq/view?usp=sharing" class="drawer-resume-btn" target="_blank" rel="noopener">
+      <span class="prompt-dollar">$</span> cat resume.pdf <span class="open-arrow">↗</span>
+    </a>
+    <div class="drawer-meta">
+      <p class="drawer-status"><span class="dot"></span> open for select roles</p>
+      <div class="drawer-socials">
+        <a href="https://github.com/mujahidamin1" target="_blank" rel="noopener">github</a>
+        <span class="dim">·</span>
+        <a href="https://www.linkedin.com/in/mujahid-amin-28b3a6235" target="_blank" rel="noopener">linkedin</a>
+      </div>
+    </div>
+  </div>
+</aside>
 
 <main id="main">
 
